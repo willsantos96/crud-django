@@ -28,8 +28,8 @@
 {% else %}
 <h1>
     Você está logado como {{user}},
-    <a href="{% url 'login' %}"> Clique aqui</a> para sair.
+    <a href="{% url 'logout' %}"> Clique aqui</a> para sair.
 </h1>
-{% endif %}
 
+{% endif %}
 {% endblock %}

@@ -1,3 +1,4 @@
+from contextlib import redirect_stdout
 import re
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
@@ -5,6 +6,7 @@ from django.core.validators import validate_email
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import FormContato
+from django.urls import reverse
 
 
 def login(request):
@@ -27,7 +29,8 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect(request, 'dashboard')
+    return redirect(reverse('dashboard'))
+    # return redirect(request, 'dashboard')
 
 
 def cadastro(request):
